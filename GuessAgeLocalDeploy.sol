@@ -7,7 +7,7 @@ contract GuessAgeLocalDeploy {
     uint oneEther = 1000000000000000000;
 
     //constructor
-    function GuessAgeLocalDeploy (uint _age) payable public {
+    constructor (uint _age) payable public {
         //fund with 10 eth
         if (msg.value != oneEther * 10)
             revert();
