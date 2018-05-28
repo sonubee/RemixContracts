@@ -5,6 +5,8 @@ contract GuessAgeLocalDeploy {
     uint age;
     //mutliply to send ether (this is 1 ether)
     uint oneEther = 1000000000000000000;
+    //creating contract object
+    address contractAddress = this;
 
     //constructor
     constructor (uint _age) payable public {
@@ -40,10 +42,9 @@ contract GuessAgeLocalDeploy {
         } else if (_difference <= 5 && _difference > 0) {
             msg.sender.transfer(_returnAmount * oneEther);
         }
-
     }
 
     function getContractBalance() public view returns(uint){
-        return this.balance;
+        return contractAddress.balance;
     }
 }
